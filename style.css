@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @font-face {
   font-family: 'ARPixels';
   src: url('ar-pixel.ttf') format('truetype');
@@ -150,3 +151,137 @@ h1 {
   .icon { width: 32px; height: 32px; }
   .lemon-img { width: 100px; height: 100px; }
 }
+=======
+@font-face {
+  font-family: 'ARPixels';
+  src: url('ar-pixel.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  
+}
+
+body {
+  margin: 0;
+  background: #505050;
+  font-family: 'ARPixels', monospace;
+  direction: rtl;
+}
+
+.center {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.lemon-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: #505050;
+  box-shadow: 0 0 40px 8px #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2vw;
+  overflow: hidden;
+}
+
+.lemon-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  image-rendering: pixelated;
+  background: #505050;
+  display: block;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: bold;
+  margin: 0 0 1vw 0;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 2px;
+  direction: ltr;
+}
+
+.en {
+  font-family: 'Press Start 2P', monospace !important;
+  direction: ltr;
+  color: #fff;
+}
+
+.desc {
+  font-size: 1.2em;
+  margin: 1vw 0 3vw 0;
+  color: #dedede;
+  text-align: center;
+  line-height: 2em;
+  font-family: 'ARPixels', monospace;
+  direction: rtl;
+}
+
+.icons {
+  display: flex;
+  gap: 4vw;
+  margin: 2vw 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  width: 54px;
+  height: 54px;
+  fill: #fff;
+  transition: fill 0.2s, transform 0.2s;
+  cursor: pointer;
+  image-rendering: pixelated;
+  background: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+.icon:hover {
+  fill: #dedede;
+  transform: scale(1.09) rotate(-2deg);
+  background: none;
+}
+
+.links {
+  margin-top: 2vw;
+  color: #bbbbbb;
+  font-size: 1em;
+  text-align: center;
+  font-family: 'ARPixels', monospace;
+  letter-spacing: 2px;
+  direction: ltr;
+}
+
+.links a {
+  color: #bbbbbb;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.2s;
+  font-weight: bold;
+  font-family: 'Press Start 2P', monospace;
+}
+
+.links a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  h1 { font-size: 1em; }
+  .desc, .links { font-size: 0.6em; }
+  .icon { width: 32px; height: 32px; }
+  .lemon-img { width: 100px; height: 100px; }
+} 
+>>>>>>> 5ef255750c18b0a9d001d4b130a95a4f04bb3343
