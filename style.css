@@ -63,7 +63,7 @@ h1 {
 
 .desc {
   font-size: 1.2em;
-  margin: 1vw 0 3vw 0;
+  margin: 1vw 0 1vw 0;
   color: #dedede;
   text-align: center;
   line-height: 2em;
@@ -73,10 +73,29 @@ h1 {
 
 .icons {
   display: flex;
-  gap: 4vw;
+  gap: 1vw;
   margin: 2vw 0;
   justify-content: center;
   align-items: center;
+}
+.icon-separator {
+  display: inline-block;
+  width: 1vw;
+  height: 54px;
+  border-left: 2px solid #888;
+  margin: 0 0.2vw;
+  opacity: 0.5;
+  vertical-align: middle;
+}
+.icons > .icon-separator:last-child {
+  display: none;
+}
+@media (max-width: 600px) {
+  .icon-separator {
+    height: 32px;
+    width: 1vw;
+    margin: 0 1vw;
+  }
 }
 
 .icon {
@@ -98,6 +117,7 @@ h1 {
   fill: #dedede;
   transform: scale(1.09) rotate(-2deg);
   background: none;
+  filter: brightness(1.2);
 }
 
 .links {
@@ -129,4 +149,4 @@ h1 {
   .desc, .links { font-size: 0.6em; }
   .icon { width: 32px; height: 32px; }
   .lemon-img { width: 100px; height: 100px; }
-} 
+}
