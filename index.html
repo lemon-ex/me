@@ -1,3 +1,4 @@
+<!-- ...existing code... -->
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
 <head>
@@ -712,119 +713,15 @@
         });
     });
 
-    // --- MOUSE GLITCH TRAIL LOGIC (UNCHANGED) ---
+    // --- MOUSE GLITCH TRAIL LOGIC DISABLED ---
     
     document.addEventListener('DOMContentLoaded', function() {
-        const glitchContainer = document.getElementById('glitch-container');
-        
-        // الألوان الجديدة: أبيض، أزرق كهربائي، أحمر ناصع
-        const colors = [
-            'rgb(255, 255, 255)',  // White Spark
-            'rgb(50, 150, 255)',   // Electric Blue
-            'rgb(240, 50, 80)',    // Vibrant Red
-            'rgb(120, 255, 150)'   // Bright Green
-        ];
-
-        // مصفوفة لتخزين جميع الجسيمات النشطة
-        const particles = [];
-
-        function createGlitchBlock(x, y) {
-            const block = document.createElement('div');
-            block.classList.add('glitch-block');
-            
-            const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            const size = 4 + Math.floor(Math.random() * 5); // Size 4px to 8px
-            
-            // تهيئة الجسيم
-            const particle = {
-                element: block,
-                x: x,
-                y: y,
-                size: size,
-                // إعطاء سرعة عشوائية (أفقياً ورأسياً)
-                vx: (Math.random() - 0.5) * 8, // من -4 إلى 4
-                vy: (Math.random() - 0.5) * 8, // من -4 إلى 4
-                life: 60, // 60 إطار حياة
-                maxLife: 60
-            };
-            
-            block.style.background = randomColor;
-            block.style.width = `${size}px`;
-            block.style.height = `${size}px`;
-            block.style.boxShadow = `0 0 4px ${randomColor}`; // تأثير توهج خفيف
-            block.style.left = `${x - size / 2}px`;
-            block.style.top = `${y - size / 2}px`;
-            block.style.opacity = '1';
-            
-            glitchContainer.appendChild(block);
-            particles.push(particle);
-        }
-
-        // حلقة التحديث الخاصة بالجسيمات
-        function updateParticles() {
-            // تكرار عكسي لحذف العناصر بأمان
-            for (let i = particles.length - 1; i >= 0; i--) {
-                const p = particles[i];
-
-                // 1. تحديث الموضع (Position)
-                p.x += p.vx;
-                p.y += p.vy;
-                
-                // 2. تطبيق الاحتكاك/التباطؤ
-                p.vx *= 0.96;
-                p.vy *= 0.96;
-                
-                // 3. تحديث عمر الجسيم
-                p.life--;
-
-                // 4. حساب الشفافية (Opacity) والتحويل (Transform)
-                const opacity = p.life / p.maxLife;
-                const scale = 0.5 + opacity * 0.5; // يبدأ كبيراً ويصغر
-                
-                p.element.style.left = `${p.x}px`;
-                p.element.style.top = `${p.y}px`;
-                p.element.style.opacity = opacity;
-                p.element.style.transform = `scale(${scale})`;
-
-                // 5. إزالة الجسيمات المنتهية
-                if (p.life <= 0) {
-                    glitchContainer.removeChild(p.element);
-                    particles.splice(i, 1);
-                }
-            }
-
-            requestAnimationFrame(updateParticles);
-        }
-        
-        // متغير للتحكم في معدل توليد الجسيمات
-        let lastGenerationTime = 0;
-        const generationInterval = 20; // توليد جسيم كل 20 مللي ثانية كحد أقصى
-
-        // Mouse/Touch Move Listener
-        function handleMove(clientX, clientY) {
-            const now = Date.now();
-            if (now - lastGenerationTime > generationInterval || particles.length < 50) {
-                createGlitchBlock(clientX, clientY);
-                lastGenerationTime = now;
-            }
-        }
-
-        document.body.addEventListener('mousemove', function(e) {
-            // زيادة فرصة التوليد عند الحركة السريعة أو النقر
-            if (Math.random() < 0.8) { 
-                handleMove(e.clientX, e.clientY);
-            }
-        });
-        
-        document.body.addEventListener('touchmove', function(e) {
-            if (e.touches.length > 0) {
-                handleMove(e.touches[0].clientX, e.touches[0].clientY);
-            }
-        });
-
-        // ابدأ حلقة تحديث الجسيمات
-        updateParticles();
+        // Glitch trail disabled — no listeners and no particle generation.
+        // If you want to remove the container from DOM entirely:
+        // const c = document.getElementById('glitch-container'); if (c) c.remove();
     });
 </script>
 </body>
 </html>
+<!-- ...existing code... -->
+
